@@ -1,0 +1,93 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+   <world name="default">
+   
+    <include>
+      <uri>model://file://oom_ws/src/ros2_term_project/worlds/car_track.world</uri>
+    </include>
+    
+    <model name="ground">
+      <pose>75 -41.8 0 0 0 1.57</pose>
+      <static>1</static>
+      <link name="ground">
+        <collision name="ground_coll">
+          <geometry>
+            <box>
+              <size>83.6 150 0.05</size>
+            </box>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name="ground_vis">
+          <geometry>
+            <box>
+              <size>83.6 150 0.05</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>./course.material</uri>
+              <name>course</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+    </model>
+    
+      <actor name="animated_box">
+	<pose>0 0 0.5 0 0 0</pose>
+	<collision name="collision">
+                <geometry>
+                    <box>
+                        <size>2 2 2</size>
+                    </box>
+                </geometry>
+            </collision>
+        <link name="box_link">
+          <visual name="visual">
+            <geometry>
+              <box>
+                <size>2 2 2</size>
+              </box>
+            </geometry>
+                <material>
+                    <script>
+                        <uri>file://media/materials/scripts/gazebo.material</uri>
+                        <name>Gazebo/WoodPallet</name>         
+                    </script>
+                </material>
+          </visual>
+        </link>
+        <script>
+          <loop>true</loop>
+          <auto_start>true</auto_start>
+          <trajectory id="0" type="line">
+             <waypoint>
+                <time>0.0</time>
+                <pose>-1 -2 1 0 0 0</pose>
+             </waypoint>
+             <waypoint>
+                <time>0.5</time>
+                <pose>-1 2 1 0 0 0</pose>
+             </waypoint>
+             <waypoint>
+                <time>1.5</time>
+                <pose>-1 -2 1 0 0 0</pose>
+             </waypoint>
+             <waypoint>
+                <time>2.5</time>
+                <pose>-1 2 1 0 0 0</pose>
+             </waypoint>
+             <waypoint>
+                <time>3.5</time>
+                <pose>-1 -2 1 0 0 0</pose>
+             </waypoint>
+          </trajectory>
+        </script>
+      </actor>
+   </world>
+</sdf>
