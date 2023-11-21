@@ -34,9 +34,548 @@
       </link>
     </model>
     
+   
     <include>
       <uri>model://sun</uri>
     </include>
+    
+    <model name="ground">
+      <pose>75 -41.8 0 0 0 1.57</pose>
+      <static>1</static>
+      <link name="ground">
+        <collision name="ground_coll">
+          <geometry>
+            <box>
+              <size>83.6 150 0.05</size>
+            </box>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name="ground_vis">
+          <geometry>
+            <box>
+              <size>83.6 150 0.05</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>./course.material</uri>
+              <name>course</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+    </model>
+    
+      <actor name="animated_box">
+	<collision name="collision">
+                <geometry>
+                    <box>
+                        <size>2 2 2</size>
+                    </box>
+                </geometry>
+            </collision>
+        <link name="box_link">
+          <visual name="visual">
+            <geometry>
+              <box>
+                <size>2 2 2</size>
+              </box>
+            </geometry>
+                <material>
+                    <script>
+                        <uri>file://media/materials/scripts/gazebo.material</uri>
+                        <name>Gazebo/WoodPallet</name>         
+                    </script>
+                </material>
+          </visual>
+        </link>
+        <script>
+          <loop>true</loop>
+          <auto_start>true</auto_start>
+          <trajectory id="0" type="line">
+             <waypoint>
+                <time>0.0</time>
+                <pose>36.0 -64.25 1 0 0 0</pose>
+             </waypoint>
+             <waypoint>
+                <time>1.0</time>
+                <pose>36.0 -66.25 1 0 0 0</pose>
+             </waypoint>
+             <waypoint>
+                <time>2.0</time>
+                <pose>36.0 -68.25 1 0 0 0</pose>
+             </waypoint>
+             <waypoint>
+                <time>3.0</time>
+                <pose>36.0 -70.25 1 0 0 0</pose>
+             </waypoint>
+             <waypoint>
+                <time>4.0</time>
+                <pose>36.0 -72.25 1 0 0 0</pose>
+             </waypoint>             
+             <waypoint>
+                <time>5.0</time>
+                <pose>36.0 -75.25 1 0 0 0</pose>
+             </waypoint>
+             <waypoint>
+                <time>6.0</time>
+                <pose>36.0 -72.25 1 0 0 0</pose>
+             </waypoint>             
+             <waypoint>
+                <time>7.0</time>
+                <pose>36.0 -70.25 1 0 0 0</pose>
+             </waypoint> 
+             <waypoint>
+                <time>8.0</time>
+                <pose>36.0 -68.25 1 0 0 0</pose>
+             </waypoint>             
+             <waypoint>
+                <time>9.0</time>
+                <pose>36.0 -66.25 1 0 0 0</pose>                
+             </waypoint>
+             <waypoint>
+                <time>10.0</time>
+                <pose>36.0 -64.25 1 0 0 0</pose>                
+             </waypoint>                           
+          </trajectory>
+        </script>
+      </actor>
+      
+            <actor name="actor">
+         <skin>
+            <filename>file://media/models/walk.dae</filename>
+            <scale>1.0</scale>
+         </skin>
+         <pose>127.0 -44.0 0 0 0 0</pose>    <!-- first position -->
+         <animation name="walking">
+            <filename>file://media/models/walk.dae</filename>
+            <scale>1.000000</scale>
+            <interpolate_x>true</interpolate_x>
+         </animation>
+         <script>
+            <loop>true</loop>
+            <delay_start>0.000000</delay_start>
+            <auto_start>true</auto_start>
+            <trajectory id="0" type="walking">
+               <waypoint>
+                  <time>0.000000</time>
+                  <pose>127.0 -41.0 0 0 0 0</pose>
+               </waypoint>
+               <waypoint>
+                  <time>2.000000</time>
+                  <pose>129.2 -41.0 0 0 0 0</pose>
+               </waypoint>
+               <waypoint>
+                  <time>4.000000</time>
+                  <pose>131.4 -41.0 0 0 0 0</pose>
+               </waypoint>               
+               <waypoint>
+                  <time>5.000000</time>
+                  <pose>132.5 -41.0 0 0 0 0</pose>
+               </waypoint>
+               <waypoint>
+                  <time>6.000000</time>
+                  <pose>133.6 -41.0 0 0 0 0</pose>
+               </waypoint>               
+               <waypoint>
+                  <time>7.000000</time>
+                  <pose>134.7 -41.0 0 0 0 0</pose>
+               </waypoint>               
+               <waypoint>
+                  <time>10.000000</time>
+                  <pose>138.2 -41.0 0 0 0 0</pose>
+               </waypoint>
+               <waypoint>
+                  <time>11.000000</time>
+                  <pose>138.2 -41.0 0 0 0 3.2</pose>
+               </waypoint>               
+               <waypoint>
+                  <time>12.000000</time>
+                  <pose>137.1 -41.0 0 0 0 3.2</pose>
+               </waypoint>
+               <waypoint>
+                  <time>13.000000</time>
+                  <pose>136.0 -41.0 0 0 0 3.2</pose>
+               </waypoint>
+               <waypoint>
+                  <time>14.000000</time>
+                  <pose>134.9 -41.0 0 0 0 3.2</pose>
+               </waypoint>               
+               <waypoint>               
+                  <time>15.000000</time>
+                  <pose>133.8 -41.0 0 0 0 3.2</pose>
+               </waypoint>
+               <waypoint>
+                  <time>16.000000</time>
+                  <pose>132.7 -41.0 0 0 0 3.2</pose>
+               </waypoint>               
+               <waypoint>               
+                  <time>17.000000</time>
+                  <pose>131.6 -41.0 0 0 0 3.2</pose>
+               </waypoint>               
+               <waypoint>
+                  <time>20.700000</time>
+                  <pose>127.0 -41.0 0 0 0 3.2</pose>
+               </waypoint>
+            </trajectory>
+         </script>
+      </actor>
+      
+    <model name="up_road">
+      <pose>87.5 -70.0 -4.55 0.0 -0.1 0.0</pose>
+      <static>1</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>10 10 10</size>
+            </box>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>10 10 10</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+               <uri>file://media/materials/scripts/gazebo.material</uri>
+               <name>Gazebo/Green</name>  
+            </script>
+          </material>
+        </visual>
+      </link>
+    </model>
+      
+      
+    <model name="flat_road">
+      <pose>94.5 -70.0 -4.08 0.0 0.0</pose>
+      <static>1</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>5 10 10</size>
+            </box>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>5 10 10</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+               <uri>file://media/materials/scripts/gazebo.material</uri>
+               <name>Gazebo/Green</name>  
+            </script>
+          </material>
+        </visual>
+      </link>
+    </model>
+    
+    <model name="down_road">
+      <pose>101.5 -70.0 -4.55 0 0.1 0</pose>
+      <static>1</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>10 10 10</size>
+            </box>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>10 10 10</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+               <uri>file://media/materials/scripts/gazebo.material</uri>
+               <name>Gazebo/Green</name>  
+            </script>
+          </material>
+        </visual>
+      </link>
+    </model>    
+    
+    
+    
+      <actor name="animated_box">
+	<collision name="collision">
+                <geometry>
+                    <box>
+                        <size>2 2 2</size>
+                    </box>
+                </geometry>
+            </collision>
+        <link name="box_link">
+          <visual name="visual">
+            <geometry>
+              <box>
+                <size>2 2 2</size>
+              </box>
+            </geometry>
+                <material>
+                    <script>
+                        <uri>file://media/materials/scripts/gazebo.material</uri>
+                        <name>Gazebo/WoodPallet</name>         
+                    </script>
+                </material>
+          </visual>
+        </link>
+        <script>
+          <loop>true</loop>
+          <auto_start>true</auto_start>
+          <trajectory id="0" type="line">
+             <waypoint>
+                <time>0.0</time>
+                <pose>36.0 -64.25 1 0 0 0</pose>
+             </waypoint>
+             <waypoint>
+                <time>1.0</time>
+                <pose>36.0 -66.25 1 0 0 0</pose>
+             </waypoint>
+             <waypoint>
+                <time>2.0</time>
+                <pose>36.0 -68.25 1 0 0 0</pose>
+             </waypoint>
+             <waypoint>
+                <time>3.0</time>
+                <pose>36.0 -70.25 1 0 0 0</pose>
+             </waypoint>
+             <waypoint>
+                <time>4.0</time>
+                <pose>36.0 -72.25 1 0 0 0</pose>
+             </waypoint>             
+             <waypoint>
+                <time>5.0</time>
+                <pose>36.0 -75.25 1 0 0 0</pose>
+             </waypoint>
+             <waypoint>
+                <time>6.0</time>
+                <pose>36.0 -72.25 1 0 0 0</pose>
+             </waypoint>             
+             <waypoint>
+                <time>7.0</time>
+                <pose>36.0 -70.25 1 0 0 0</pose>
+             </waypoint> 
+             <waypoint>
+                <time>8.0</time>
+                <pose>36.0 -68.25 1 0 0 0</pose>
+             </waypoint>             
+             <waypoint>
+                <time>9.0</time>
+                <pose>36.0 -66.25 1 0 0 0</pose>                
+             </waypoint>
+             <waypoint>
+                <time>10.0</time>
+                <pose>36.0 -64.25 1 0 0 0</pose>                
+             </waypoint>                           
+          </trajectory>
+        </script>
+      </actor>
+      
+            <actor name="actor">
+         <skin>
+            <filename>file://media/models/walk.dae</filename>
+            <scale>1.0</scale>
+         </skin>
+         <pose>127.0 -44.0 0 0 0 0</pose>    <!-- first position -->
+         <animation name="walking">
+            <filename>file://media/models/walk.dae</filename>
+            <scale>1.000000</scale>
+            <interpolate_x>true</interpolate_x>
+         </animation>
+         <script>
+            <loop>true</loop>
+            <delay_start>0.000000</delay_start>
+            <auto_start>true</auto_start>
+            <trajectory id="0" type="walking">
+               <waypoint>
+                  <time>0.000000</time>
+                  <pose>127.0 -41.0 0 0 0 0</pose>
+               </waypoint>
+               <waypoint>
+                  <time>2.000000</time>
+                  <pose>129.2 -41.0 0 0 0 0</pose>
+               </waypoint>
+               <waypoint>
+                  <time>4.000000</time>
+                  <pose>131.4 -41.0 0 0 0 0</pose>
+               </waypoint>               
+               <waypoint>
+                  <time>5.000000</time>
+                  <pose>132.5 -41.0 0 0 0 0</pose>
+               </waypoint>
+               <waypoint>
+                  <time>6.000000</time>
+                  <pose>133.6 -41.0 0 0 0 0</pose>
+               </waypoint>               
+               <waypoint>
+                  <time>7.000000</time>
+                  <pose>134.7 -41.0 0 0 0 0</pose>
+               </waypoint>               
+               <waypoint>
+                  <time>10.000000</time>
+                  <pose>138.2 -41.0 0 0 0 0</pose>
+               </waypoint>
+               <waypoint>
+                  <time>11.000000</time>
+                  <pose>138.2 -41.0 0 0 0 3.2</pose>
+               </waypoint>               
+               <waypoint>
+                  <time>12.000000</time>
+                  <pose>137.1 -41.0 0 0 0 3.2</pose>
+               </waypoint>
+               <waypoint>
+                  <time>13.000000</time>
+                  <pose>136.0 -41.0 0 0 0 3.2</pose>
+               </waypoint>
+               <waypoint>
+                  <time>14.000000</time>
+                  <pose>134.9 -41.0 0 0 0 3.2</pose>
+               </waypoint>               
+               <waypoint>               
+                  <time>15.000000</time>
+                  <pose>133.8 -41.0 0 0 0 3.2</pose>
+               </waypoint>
+               <waypoint>
+                  <time>16.000000</time>
+                  <pose>132.7 -41.0 0 0 0 3.2</pose>
+               </waypoint>               
+               <waypoint>               
+                  <time>17.000000</time>
+                  <pose>131.6 -41.0 0 0 0 3.2</pose>
+               </waypoint>               
+               <waypoint>
+                  <time>20.700000</time>
+                  <pose>127.0 -41.0 0 0 0 3.2</pose>
+               </waypoint>
+            </trajectory>
+         </script>
+      </actor>
+      
+    <model name="up_road">
+      <pose>87.5 -70.0 -4.55 0.0 -0.1 0.0</pose>
+      <static>1</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>10 10 10</size>
+            </box>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>10 10 10</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+               <uri>file://media/materials/scripts/gazebo.material</uri>
+               <name>Gazebo/Green</name>  
+            </script>
+          </material>
+        </visual>
+      </link>
+    </model>
+      
+      
+    <model name="flat_road">
+      <pose>94.5 -70.0 -4.08 0.0 0.0</pose>
+      <static>1</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>5 10 10</size>
+            </box>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>5 10 10</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+               <uri>file://media/materials/scripts/gazebo.material</uri>
+               <name>Gazebo/Green</name>  
+            </script>
+          </material>
+        </visual>
+      </link>
+    </model>
+    
+    <model name="down_road">
+      <pose>101.5 -70.0 -4.55 0 0.1 0</pose>
+      <static>1</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>10 10 10</size>
+            </box>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>10 10 10</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+               <uri>file://media/materials/scripts/gazebo.material</uri>
+               <name>Gazebo/Green</name>  
+            </script>
+          </material>
+        </visual>
+      </link>
+    </model>
     
   </world>
 </sdf>

@@ -14,7 +14,7 @@ def generate_launch_description():
     # configuration
     world = LaunchConfiguration('world')
     print('world =', world)
-    world_file_name = 'gazebo_launch.world'
+    world_file_name = 'car_track.world'
     world = os.path.join(get_package_share_directory('ros2_term_project'),
                          'worlds', world_file_name)
     print('world file name = %s' % world)
@@ -29,8 +29,7 @@ def generate_launch_description():
         cmd=['gazebo', '-s', 'libgazebo_ros_factory.so', world],
         output='screen')
 
-
-		# spawn prius_hybrid
+	# spawn prius_hybrid
     spawn_car_action= ExecuteProcess(
         cmd=['python3', os.path.join(os.getcwd(), 'src', 'ros2_term_project', 'test', 'spawn_car.py')],
         output='screen'
@@ -42,13 +41,13 @@ def generate_launch_description():
         executable='follower',
         name='follower',
         remappings=[
-            ('start_car', 'demo/cmd_demo'),
+            ('/start_car', 'demo/cmd_demo'),
         ]
     )
-    
+
 
     return LaunchDescription([
         declare_argument,
         gazebo_run,
-        
+        spawn_car_action
     ])

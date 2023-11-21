@@ -17,7 +17,8 @@ class LineTracker:
         search_top = int(2 * h / 4)
         search_bot = int(2 * h / 4 + 20)
         mask[0:h, 0:int(2 * w / 4)] = 0
-        mask[0:h, int(2 * w / 4 + 30):w] = 0
+        mask[0:h, int(2 * w / 4 + 25):w] = 0
+        mask[int(h / 2 + 20):h,int(w / 2):int(w / 2+ 25)] = 0
         M = cv2.moments(mask)
         if M['m00'] > 0:
             cx = int(M['m10'] / M['m00'])
