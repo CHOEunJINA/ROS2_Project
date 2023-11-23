@@ -24,8 +24,10 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-		'follower = ros2_term_project.line_follower:main',
+		'line_follower = ros2_term_project.line_follower:main',
+        'line_tracker = ros2_term_project.line_tracker:main',
 		'box_spawn = ros2_term_project.box_spawn:main',
+        'start_car_publisher = ros2_term_project.start_car_publisher:main',
         ],
     },
 )
