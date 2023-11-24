@@ -1,0 +1,428 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <world name="default">
+
+<!--
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+-->
+
+<gui fullscreen="0">
+      <camera name="user_camera">
+      <pose>-90 0 80 0 0.82 0</pose>
+      </camera>
+   </gui>
+
+<model name="ground">
+      <pose>0 0 0 0 0 0</pose>
+      <static>1</static>
+      <link name="ground">
+        <collision name="ground_coll">
+          <geometry>
+            <box>
+              <size>83.6 150  0.05</size>
+            </box>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name="ground_vis">
+          <geometry>
+            <box>
+              <size>83.6 150  0.05</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri> ./course.material </uri>  <!-- file://course.material -->
+              <name>course</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+<model name="road"> <!-- -28.5 -10.5 -4.55 0.0 -0.1 -1.58 -->
+      <pose>-28.3 -10.5 0.47 0.0 0.10 1.57</pose>
+      <static>1</static>
+      <link name="road">
+        <collision name="road_coll">
+          <geometry>
+            <box>
+              <size>9.2 9.3 0.05</size>
+            </box>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name="road_vis">
+          <geometry>
+            <box>
+              <size>9.2 9.3 0.05</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri> ./road.material </uri>  <!-- file://course.material -->
+              <name>road</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="road2"> <!-- -28.5 -17.5 -4.08 0.0 0.0 1.56 -->
+      <pose>-28.3 -17.5 0.95 0.0 0.0 1.57</pose>
+      <static>1</static>
+      <link name="road2">
+        <collision name="road2_coll">
+          <geometry>
+            <box>
+              <size>5.0 9.2 0.05</size>
+            </box>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name="road2_vis">
+          <geometry>
+            <box>
+              <size>5.0 9.2 0.05</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri> ./road1.material </uri>  <!-- file://course.material -->
+              <name>road1</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="road3"> <!-- -28.5 -24.4 -4.55 0 0.1 -1.58 -->
+      <pose>-28.3 -24.5 0.47 0.0 -0.1 1.583</pose>
+      <static>1</static>
+      <link name="road3">
+        <collision name="road3_coll">
+          <geometry>
+            <box>
+              <size>9.5 9 0.05</size>
+            </box>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>02
+        </collision>
+        <visual name="road3_vis">
+          <geometry>
+            <box>
+              <size>9.5 9 0.05</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri> ./road1.material </uri>  <!-- file://course.material -->
+              <name>road1</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+    </model>
+
++
+
+
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+     <actor name="animated_box">
+	<collision name="collision">
+                <geometry>
+                    <box>
+                        <size>2 2 2</size>
+                    </box>
+                </geometry>
+            </collision>
+        <link name="box_link">
+          <visual name="visual">
+            <geometry>
+              <box>
+                <size>2 2 2</size>
+              </box>
+            </geometry>
+                <material>
+                    <script>
+                        <uri>file://media/materials/scripts/gazebo.material</uri>
+                        <name>Gazebo/Blue</name>
+                    </script>
+                </material>
+          </visual>
+        </link>
+        <script>
+          <loop>true</loop>
+          <auto_start>true</auto_start>
+          <trajectory id="0" type="line">
+             <waypoint>
+                <time>0.0</time>
+                <pose>-22.5 38.5 1 0 0 0</pose>
+             </waypoint>
+             <waypoint>
+                <time>1.0</time>
+                <pose>-24.5 38.5 1 0 0 0</pose>
+             </waypoint>
+             <waypoint>
+                <time>2.0</time>
+                <pose>-26.5 38.5 1 0 0 0</pose>
+             </waypoint>
+             <waypoint>
+                <time>3.0</time>
+                <pose>-28.5 38.5 1 0 0 0</pose>
+             </waypoint>
+             <waypoint>
+                <time>4.0</time>
+                <pose>-30.5 38.5 1 0 0 0</pose>
+             </waypoint>
+             <waypoint>
+                <time>5.0</time>
+                <pose>-32.5 38.5 1 0 0 0</pose>
+             </waypoint>
+             <waypoint>
+                <time>6.0</time>
+                <pose>-34.5 38.5 1 0 0 0</pose>
+             </waypoint>
+             <waypoint>
+                <time>7.0</time>
+                <pose>-32.5 38.5 1 0 0 0</pose>
+             </waypoint>
+             <waypoint>
+                <time>8.0</time>
+                <pose>-30.5 38.5 1 0 0 0</pose>
+             </waypoint>
+             <waypoint>
+                <time>9.0</time>
+                <pose>-28.5 38.5 1 0 0 0</pose>
+             </waypoint>
+             <waypoint>
+                <time>10.0</time>
+                <pose>-26.5 38.5 1 0 0 0</pose>
+             </waypoint>
+             <waypoint>
+                <time>11.0</time>
+                <pose>-24.5 38.5 1 0 0 0</pose>
+             </waypoint>
+             <waypoint>
+                <time>12.0</time>
+                <pose>-22.5 38.5 1 0 0 0</pose>
+             </waypoint>
+          </trajectory>
+        </script>
+      </actor>
+
+            <actor name="actor">
+         <skin>
+            <filename>file://media/models/walk.dae</filename>
+            <scale>1.0</scale>
+         </skin>
+         <pose>127.0 -44.0 0 0 0 0</pose>    <!-- first position -->
+         <animation name="walking">
+            <filename>file://media/models/walk.dae</filename>
+            <scale>1.000000</scale>
+            <interpolate_x>true</interpolate_x>
+         </animation>
+         <script>
+            <loop>true</loop>
+            <delay_start>0.000000</delay_start>
+            <auto_start>true</auto_start>
+            <trajectory id="0" type="walking">
+               <waypoint>
+                  <time>0.000000</time>
+                  <pose>0.3 -52.5 0 0 0 -1.5</pose>
+               </waypoint>
+               <waypoint>
+                  <time>2.000000</time>
+                  <pose>0.3 -53.6 0 0 0 -1.5</pose>
+               </waypoint>
+               <waypoint>
+                  <time>4.000000</time>
+                  <pose>0.3 -54.7 0 0 0 -1.5</pose>
+               </waypoint>
+               <waypoint>
+                  <time>5.000000</time>
+                  <pose>0.3 -55.8 0 0 0 -1.5</pose>
+               </waypoint>
+               <waypoint>
+                  <time>6.000000</time>
+                  <pose>0.3 -56.9 0 0 0 -1.5</pose>
+               </waypoint>
+               <waypoint>
+                  <time>7.000000</time>
+                  <pose>0.3 -58.0 0 0 0 -1.5</pose>
+               </waypoint>
+               <waypoint>
+                  <time>8.000000</time>
+                  <pose>0.3 -59.1 0 0 0 -1.5</pose>
+               </waypoint>
+               <waypoint>
+                  <time>9.000000</time>
+                  <pose>0.3 -60.2 0 0 0 -1.5</pose>
+               </waypoint>
+               <waypoint>
+                  <time>10.000000</time>
+                  <pose>0.3 -61.3 0 0 0 -1.5</pose>
+               </waypoint>
+               <waypoint>
+                  <time>11.000000</time>
+                  <pose>0.3 -62.4 0 0 0 -1.5</pose>
+               </waypoint>
+               <waypoint>
+                  <time>12.000000</time>
+                  <pose>0.3 -61.3 0 0 0 1.5</pose>
+               </waypoint>
+               <waypoint>
+                  <time>13.000000</time>
+                  <pose>0.3 -60.2 0 0 0 1.5</pose>
+               </waypoint>
+               <waypoint>
+                  <time>14.000000</time>
+                  <pose>0.3 -59.1 0 0 0 1.5</pose>
+               </waypoint>
+               <waypoint>
+                  <time>15.000000</time>
+                  <pose>0.3 -58.0 0 0 0 1.5</pose>
+               </waypoint>
+               <waypoint>
+                  <time>16.000000</time>
+                  <pose>0.3 -56.9 0 0 0 1.5</pose>
+               </waypoint>
+               <waypoint>
+                  <time>17.000000</time>
+                  <pose>0.3 -55.8 0 0 0 1.5</pose>
+               </waypoint>
+               <waypoint>
+                  <time>18.000000</time>
+                  <pose>0.3 -54.7 0 0 0 1.5</pose>
+               </waypoint>
+               <waypoint>
+                  <time>19.000000</time>
+                  <pose>0.3 -53.6 0 0 0 1.5</pose>
+               </waypoint>
+               <waypoint>
+                  <time>20.000000</time>
+                  <pose>0.3 -52.5 0 0 0 1.5</pose>
+               </waypoint>
+            </trajectory>
+         </script>
+      </actor>
+
+    <model name="up_road">
+      <pose>-28.5 -10.5 -4.55 0.0 -0.1 -1.58</pose>
+      <static>1</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>10 9 10</size>
+            </box>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>10 9 10</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+               <uri>file://media/materials/scripts/gazebo.material</uri>
+               <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+
+    <model name="flat_road">
+      <pose>-28.5 -17.5 -4.08 0.0 0.0 1.56</pose>
+      <static>1</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>5 9 10</size>
+            </box>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>5 9 10</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+               <uri>file://media/materials/scripts/gazebo.material</uri>
+               <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="down_road">
+      <pose>-28.5 -24.4 -4.55 0 0.1 -1.58</pose>
+      <static>1</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>10 9 10</size>
+            </box>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>10 9 10</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+               <uri>file://media/materials/scripts/gazebo.material</uri>
+               <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+    </model>
+  </world>
+</sdf>
